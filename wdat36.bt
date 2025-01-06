@@ -1,0 +1,22 @@
+struct FILE 
+{
+    struct HEADER 
+    {
+        char    type[4];
+    } header;
+    
+    FSeek( 0x4D0 );
+    char areaHeader[5];
+    struct RECORD 
+    {
+        int     num[200];
+    } record[ 239 ];
+    
+    FSeek( 0x0324D0 );
+    char junk2[5];
+    struct RECORD2
+    {
+        int     num[200];
+    } record2[ 239 ];
+    
+} file;  
